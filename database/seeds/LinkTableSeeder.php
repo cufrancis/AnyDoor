@@ -13,8 +13,8 @@ class LinkTableSeeder extends Seeder
     {
         //
         DB::table('links')->insert([
-          ['name' =>  '百度', 'url' =>  'http://www.baidu.com'],
-          ['name' =>  'cufrancis的博客', 'url' =>  'http://cufrancis.com'],
+          ['name' =>  '百度', 'url' =>  'http://www.baidu.com', 'type'  =>  1],
+          ['name' =>  'cufrancis的博客', 'url' =>  'http://cufrancis.com', 'type'  =>  2],
         ]);
     }
 }
