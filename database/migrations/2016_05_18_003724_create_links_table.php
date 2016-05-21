@@ -18,6 +18,7 @@ class CreateLinksTable extends Migration
             $table->text('url')->default('');
             $table->integer('type')->default(0)->index();
             $table->integer('visit')->default(0);
+            $table->integer('recommend')->default(0);
             $table->timestamps();
         });
     }
