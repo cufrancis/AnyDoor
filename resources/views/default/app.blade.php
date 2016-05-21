@@ -23,72 +23,16 @@
                 <div class="top-doors-wp" id="doors">
                     <a id="doorsKey" href="javascript:void 0;" class="top-doors-key" data-operation="openDoor">+</a>
                     <ul class="top-doors">
+                      {{-- 在blade模板中定义变量，供blade模板引擎使用 --}}
+                      {{-- */$num = 1; /* --}}
+                      @foreach($types as $type)
                       <li>
-                        <a href=""></a>
+                        <a href="#{{$type->code}}" class="top-doors-{{$num++}}" data-operation="gotoDoor">
+                            <strong class="top-doors-l">{{$type->name}}</strong>
+                            <span class="top-doors-r">{{$type->code}}</span>
+                        </a>
                       </li>
-
-
-                        <li>
-                        <a href="#intellect" class="top-doors-1" data-operation="gotoDoor">
-                            <strong class="top-doors-l">爱智慧</strong>
-                            <span class="top-doors-r">Intellect</span>
-                        </a>
-                        </li>
-
-
-
-                        <li>
-                        <a href="#skill" class="top-doors-2" data-operation="gotoDoor">
-                            <span class="top-doors-l">Skill</span>
-                            <strong class="top-doors-r">有知识</strong>
-                        </a>
-                        </li>
-
-
-
-                        <li>
-                        <a href="#LOHAS" class="top-doors-3" data-operation="gotoDoor">
-                            <strong class="top-doors-l">乐生活</strong>
-                            <span class="top-doors-r">Lohas</span>
-                        </a>
-                        </li>
-
-
-
-                        <li>
-                        <a href="#vatality" class="top-doors-4" data-operation="gotoDoor">
-                            <span class="top-doors-l">Vatality</span>
-                            <strong class="top-doors-r">很能打</strong>
-                        </a>
-                        </li>
-
-
-
-                        <li>
-                        <a href="#geek" class="top-doors-5" data-operation="gotoDoor">
-                            <strong class="top-doors-l">极客范</strong>
-                            <span class="top-doors-r">Geek</span>
-                        </a>
-                        </li>
-
-
-
-                        <li>
-                        <a href="#artistic" class="top-doors-6" data-operation="gotoDoor">
-                            <span class="top-doors-l">Artistic</span>
-                            <strong class="top-doors-r">文艺腔</strong>
-                        </a>
-                        </li>
-
-
-
-                        <li>
-                        <a href="#island" class="top-doors-7" data-operation="gotoDoor">
-                            <strong class="top-doors-l">孤岛客</strong>
-                            <span class="top-doors-r">Island</span>
-                        </a>
-                        </li>
-
+                      @endforeach
 
                     </ul>
                     <div class="top-doors-tip" id="doorTip">点击“+”你会跳转到一个随机的网站</div>

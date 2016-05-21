@@ -20,7 +20,7 @@ class IndexController extends Controller
     {
       $types = Type::all();
       $links = Link::all();
-      dd($types);
+      // dd($types);
 
       return view(config('web.theme').'index/index', ['types' =>  $types, 'links' =>  $links]);
     }
