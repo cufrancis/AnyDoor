@@ -12,9 +12,11 @@ class LinkTableSeeder extends Seeder
     public function run()
     {
         //
-        DB::table('links')->insert([
-          ['name' =>  '百度', 'url' =>  'http://www.baidu.com', 'type'  =>  1,  'recommend' =>  1],
-          ['name' =>  'cufrancis的博客', 'url' =>  'http://cufrancis.com', 'type'  =>  2, 'recommend'  =>  1],
-        ]);
+        // DB::table('links')->insert([
+        //   ['name' =>  '百度', 'url' =>  'http://www.baidu.com', 'type'  =>  1,  'recommend' =>  1],
+        //   ['name' =>  'cufrancis的博客', 'url' =>  'http://cufrancis.com', 'type'  =>  2, 'recommend'  =>  1],
+        // ]);
+        App\Link::truncate();
+        factory(App\Link::class, 20)->create();
     }
 }
