@@ -24,7 +24,7 @@
                     <a id="doorsKey" href="javascript:void 0;" class="top-doors-key" data-operation="openDoor">+</a>
                     <ul class="top-doors">
                       <li>
-                        <a href="">
+                        <a href=""></a>
                       </li>
 
 
