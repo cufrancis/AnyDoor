@@ -16,6 +16,7 @@ class CreateTypesTable extends Migration
             $table->increments('id');
             $table->integer('gid');
             $table->string('name');
+            $table->string('code'); 分类代号
             $table->timestamps();
         });
     }
