@@ -24,6 +24,9 @@ class IndexController extends Controller
       for ($i=0; $i < count($categories); $i++) {
         $sunTypes[$i] = Type::where('gid', '=', $categories[$i]->id)->get();
       }
+      // dd($links);
+
+
       // dd($sunType);
       // dd($categories);
       // dd($types);

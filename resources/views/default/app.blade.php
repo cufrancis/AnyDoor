@@ -76,17 +76,39 @@
             </div>
             <!--  mark   -->
 
-            <div id='intellect' class="title-b">
-                <div class="title">
-                    <h2>爱智慧</h2>
-                    <a href="http://gate.guokr.com/submit/interest/1/" class="title-add" target='_blank'><span>+</span>添加网站</a>
-                    <a href="javascript:void 0;" class="title-trigger" data-operation="closeBoard">收起</a>
-                </div>
-            </div>
+              @for($c=0; $c < count($categories) ; $c++)
 
-            @foreach($categories as $category)
-              <div id="{{ $category->code }}">
-            @endforeach
+              <div id="{{ $categories[$c]->code }}" calss="title-b">
+                <div class="title">
+                  <h2>{{ $categories[$c]->name }}</h2>
+                  <a href="" class="title-add" target="_blank"><span>+</span>添加网站</a>
+                  <a href="javascript:void 0;" class="title-trigger" data-operation="closeBoard">收起</a>
+                </div>
+              </div>
+
+              <div class="categorys-hd fix">
+                <div class="categorys">
+                  {{-- {{dd($sunTypes[$c])}} --}}
+                  @for($s=0; $s < count($sunTypes[$c]); $s++)
+                    {{-- */$cnum = $c;$snum = $s;/* --}}
+                    <div class="category">
+                      <h3><b class="category-{!! ++$cnum !!}-{!! ++$snum !!}"></b>{{$sunTypes[$c][$s]->name}}<s></s></h3>
+                      <ul class="list">
+                        {{-- {{dd($links[9]->name)}} --}}
+                          @for($z=0; $z < 10; $z++)
+                            @if($links[$z] != NULL)
+                              <li><a data-desc="{{$links[$z]->desc}}" target="_blank" href="{{ $links[$z]->url }}">{{$links[$z]->name}}</a></li>
+                            @endif
+                          @endfor
+
+                        {{-- @endforeach --}}
+                      </ul>
+                    </div>
+                  @endfor
+
+                </div>
+              </div>
+            @endfor
 
 
             <div class="categorys-hd fix">
