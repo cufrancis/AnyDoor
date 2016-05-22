@@ -16,7 +16,7 @@ class CreateLinksTable extends Migration
             $table->increments('id');
             $table->string('name')->default('');
             $table->text('url')->default('');
-            $table->text('introduction')->default(''); // 简介
+            $table->text('desc')->default(''); // 简介
             $table->integer('type')->default(0)->index();
             $table->integer('visit')->default(0);
             $table->integer('recommend')->default(0);

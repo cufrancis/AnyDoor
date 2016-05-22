@@ -14,9 +14,9 @@ class CreateTypesTable extends Migration
     {
         Schema::create('types', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('gid');
             $table->string('name');
-            $table->string('code');
+            $table->integer('gid')->default(0);
+            $table->string('code')->default('');
             $table->timestamps();
         });
     }

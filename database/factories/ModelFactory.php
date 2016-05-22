@@ -24,7 +24,7 @@ $factory->define(App\Link::class, function (Faker\Generator $faker) {
   return [
     'name'  =>  $faker->domainName,
     'url' =>  $faker->url,
-    'introduction'  =>  $faker->text($maxNbChars = 200), 
+    'desc'  =>  $faker->text($maxNbChars = 200),
     'type'  =>  $faker->numberBetween($min = 1, $max = 20),
     'recommend' => ($faker->randomNumber($nbDigits = NULL)%2 == 0) ? 0 : 1,
   ];

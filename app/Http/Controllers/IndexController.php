@@ -20,8 +20,15 @@ class IndexController extends Controller
     {
       $types = Type::all();
       $links = Link::all();
+      $categories = Type::where('gid', '=', 0)->get(); //
+      for ($i=0; $i < count($categories); $i++) {
+        $sunTypes[$i] = Type::where('gid', '=', $categories[$i]->id)->get();
+      }
+      // dd($sunType);
+      // dd($categories);
+      // dd($types);
 
-      return view(config('web.theme').'index/index', ['types' =>  $types, 'links' =>  $links]);
+      return view(config('web.theme').'index/index', ['types' =>  $types, 'links' =>  $links, 'categories' => $categories, 'sunTypes'  =>  $sunTypes]);
     }
 
     /**
