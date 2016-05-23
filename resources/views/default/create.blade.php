@@ -112,9 +112,9 @@
                     <a id="del" class="item-del" href="javascript:void(0);"><span></span></a>
                 </div>
             </div>
-            <form class="submit-form" id="submit-form" action="http://gate.guokr.com/submit/interest/1/" method="POST">
-                <input id="csrf_token" name="csrf_token" type="hidden" value="1464011991.73##2d9488de0b5e5d35d2950b633d64d4a234fa6338">
-
+            <form class="submit-form" id="submit-form" action="{{ url('/add') }}" method="POST">
+              {!! csrf_field() !!}
+              
                 <div id='add'>
                     <a class="item-add" href="javascript:void(0);"><span></span>继续添加</a>
                 </div>

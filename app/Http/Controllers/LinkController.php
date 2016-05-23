@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\Type;
 
 class LinkController extends Controller
 {
@@ -25,7 +26,7 @@ class LinkController extends Controller
      */
     public function create()
     {
-        return view(config('web.theme').'create');
+        // return view(config('web.theme').'create');
     }
 
     /**
@@ -36,7 +37,7 @@ class LinkController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request);
     }
 
     /**
