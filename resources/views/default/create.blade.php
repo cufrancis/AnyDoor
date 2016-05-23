@@ -17,6 +17,7 @@
             <a href="http://gate.guokr.com/"><h1 class="top-logo">果壳任意门</h1></a>
         </div>
     </div>
+    {{-- {{dd($types[1]->childTypes)}} --}}
     <div class="main-wrap">
         <div class="main">
             <h2>添加网站</h2>
@@ -114,7 +115,7 @@
             </div>
             <form class="submit-form" id="submit-form" action="{{ url('/add') }}" method="POST">
               {!! csrf_field() !!}
-              
+
                 <div id='add'>
                     <a class="item-add" href="javascript:void(0);"><span></span>继续添加</a>
                 </div>

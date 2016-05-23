@@ -26,7 +26,20 @@ class LinkController extends Controller
      */
     public function create()
     {
-        // return view(config('web.theme').'create');
+      $types = Type::all();
+      $topTypes = Type::where('gid', '=', 0)->get();
+      // dd($types[0]->childTypes->toJson());
+      for ($i=0; $i < count($topTypes); $i++) {
+        // # code...
+        for ($x=0; $x < count($types); $x++) {
+          # code...
+          $data[$i] = $topTypes[$i]->childTypes;
+        }
+      }
+
+      dd(json_encode((object)$data));
+      // dd($types->childTypes);
+        return view(config('web.theme').'create', ['types'  =>  $types]);
     }
 
     /**
