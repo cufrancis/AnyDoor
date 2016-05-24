@@ -14,3 +14,4 @@
 Route::get('/', 'IndexController@index');
 
 Route::get('/add', 'LinkController@create');
+Route::post('/add', 'LinkController@store');

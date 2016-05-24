@@ -33,13 +33,15 @@ class LinkController extends Controller
         // # code...
         for ($x=0; $x < count($types); $x++) {
           # code...
-          $data[$i] = $topTypes[$i]->childTypes;
+          $datas[$i] = $topTypes[$i]->childTypes;
         }
       }
+      $jsonData = json_encode((object)$datas);
 
-      dd(json_encode((object)$data));
+
+      // dd(json_encode((object)$datas));
       // dd($types->childTypes);
-        return view(config('web.theme').'create', ['types'  =>  $types]);
+        return view(config('web.theme').'create', ['types'  =>  $types, 'datas'  =>  $datas, 'topTypes' =>  $topTypes, 'jsonData' =>  $jsonData]);
     }
 
     /**
