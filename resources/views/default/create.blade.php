@@ -44,32 +44,9 @@
 
                         </select>
                         <select name="taxonomy_id">
-
-                            <option value="1">数学</option>
-
-                            <option value="2">物理</option>
-
-                            <option value="3">天文</option>
-
-                            <option value="4">生物</option>
-
-                            <option value="5">医学</option>
-
-                            <option value="6">心理学</option>
-
-                            <option value="7">语言学</option>
-
-                            <option value="8">人类学</option>
-
-                            <option value="9">考古学</option>
-
-                            <option value="10">经济学</option>
-
-                            <option value="11">地质</option>
-
-                            <option value="12">化学</option>
-
-                            <option value="13">学术</option>
+                          @foreach($sunTypes as $sunType)
+                            <option value="{{ $sunType->id }}">{{ $sunType->name }}</option>
+                          @endforeach
 
                         </select>
                     </p>
@@ -85,7 +62,7 @@
               {!! csrf_field() !!}
 
                 <div id='add'>
-                    <a class="item-add" href="javascript:void(0);"><span></span>继续添加</a>
+                    {{-- <a class="item-add" href="javascript:void(0);"><span></span>继续添加</a> --}}
                 </div>
                 <input type="submit" value="提交" id='submit_button'/>
             </form>

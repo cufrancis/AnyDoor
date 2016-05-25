@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Type;
+use App\Link;
 
 class LinkController extends Controller
 {
@@ -36,12 +37,16 @@ class LinkController extends Controller
           $datas[$i] = $topTypes[$i]->childTypes;
         }
       }
+
+      // 获取id 为1 的子分类，因为create.blade.php 第一次加载时不能正确显示子分类数据
+      $sunTypes = Type::where('gid', '=', $topTypes[0]->id)->get();
+      // dd($sunType);
       $jsonData = json_encode((object)$datas);
 
 
       // dd(json_encode((object)$datas));
       // dd($types->childTypes);
-        return view(config('web.theme').'create', ['types'  =>  $types, 'datas'  =>  $datas, 'topTypes' =>  $topTypes, 'jsonData' =>  $jsonData]);
+        return view(config('web.theme').'create', ['types'  =>  $types, 'datas'  =>  $datas, 'topTypes' =>  $topTypes, 'jsonData' =>  $jsonData, 'sunTypes'  =>  $sunTypes]);
     }
 
     /**
@@ -52,7 +57,13 @@ class LinkController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request);
+      // dd($request->interest_id_1);
+        $link = new Link;
+        $link->name = $request->name_1;
+        $link->url  = $request->link_1;
+        $link->desc = $request->description_1;
+        $link->type = $request->taxonomy_id_1;
+        $link->save();
     }
 
     /**

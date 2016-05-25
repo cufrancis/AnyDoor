@@ -85,7 +85,7 @@
                   <a href="javascript:void 0;" class="title-trigger" data-operation="closeBoard">收起</a>
                 </div>
               </div>
-
+              {{-- {{dd($categories)}} --}}
               <div class="categorys-hd fix">
                 <div class="categorys">
                   @for($s=0; $s < count($sunTypes[$c]); $s++)
@@ -93,9 +93,11 @@
                     <div class="category">
                       <h3><b class="category-{!! ++$cnum !!}-{!! ++$snum !!}"></b>{{$sunTypes[$c][$s]->name}}<s></s></h3>
 
+
                       <ul class="list">
                           @for($z=0; $z < 10; $z++)
-                            @if($links[$z] != NULL)
+                            {{-- {{dd($links[$z]->type.",".$sunTypes[$c][$s]->id)}} --}}
+                            @if(!empty($links[$z]) && $links[$z]->type == $sunTypes[$c][$s]->id)
                               <li><a data-desc="{{$links[$z]->desc}}" target="_blank" href="{{ $links[$z]->url }}">{{$links[$z]->name}}</a></li>
                             @endif
                           @endfor
