@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="http://static.guokr.com/skin/anywhere.css?v=c37cce982cb8" />
 </head>
 <body>
+  {{-- {{dd($types[0]->childTypes)}} --}}
     <div class="container">
         <div class="top-wp">
             <div class="top">

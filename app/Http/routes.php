@@ -13,5 +13,10 @@
 
 Route::get('/', 'IndexController@index');
 
+// 新增导航链接
 Route::get('/add', 'LinkController@create');
 Route::post('/add', 'LinkController@store');
+
+// 新增分类
+Route::get('/type/add', 'TypeController@create');
+Route::post('/type/add', 'TypeController@store');
